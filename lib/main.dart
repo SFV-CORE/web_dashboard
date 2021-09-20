@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:web_dashboard/layout.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -23,12 +23,12 @@ class MyApp extends StatelessWidget {
               .apply(bodyColor: Colors.black),
           //
 
-          pageTransitionsTheme: PageTransitionsTheme(builders: {
+          pageTransitionsTheme: const PageTransitionsTheme(builders: {
             TargetPlatform.iOS: FadeUpwardsPageTransitionsBuilder(),
             TargetPlatform.android: FadeUpwardsPageTransitionsBuilder()
           }),
           primaryColor: Colors.blue),
-      home: SiteLayout(),
+      home: const SiteLayout(),
     );
   }
 }

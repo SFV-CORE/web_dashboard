@@ -17,8 +17,8 @@ class SiteLayout extends StatelessWidget {
         ),
         // ignore: prefer_const_constructors
         body: ResponsiveWidget(
-          largeScreen: LargeScreen(),
-          smallScreen: SmallScreen(),
+          largeScreen: const LargeScreen(),
+          smallScreen: const SmallScreen(),
           mediumScreen: MediumScreen(),
         ));
   }
