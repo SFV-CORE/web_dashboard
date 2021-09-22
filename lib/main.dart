@@ -14,21 +14,22 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      title: "Dash",
+      title: "Dash", //*Titulo da pagina
       theme: ThemeData(
           scaffoldBackgroundColor: Colors.white,
 
-          //Define a cor de todo o texto como preto
+          //*Define a cor de todo o texto como preto
           textTheme: GoogleFonts.mulishTextTheme(Theme.of(context).textTheme)
               .apply(bodyColor: Colors.black),
-          //
+          //*
 
           pageTransitionsTheme: const PageTransitionsTheme(builders: {
             TargetPlatform.iOS: FadeUpwardsPageTransitionsBuilder(),
             TargetPlatform.android: FadeUpwardsPageTransitionsBuilder()
           }),
           primaryColor: Colors.blue),
-      home: const SiteLayout(),
+      //*define a pagina inicial
+      home: SiteLayout(),
     );
   }
 }

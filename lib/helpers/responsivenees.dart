@@ -18,7 +18,7 @@ class ResponsiveWidget extends StatelessWidget {
 
 //Verifica o tamanho da tela
   static bool isSmallScreen(BuildContext context) =>
-      MediaQuery.of(context).size.width < smallScreenSize;
+      MediaQuery.of(context).size.width < mediumScreenSize;
 
   static bool isMediumScreen(BuildContext context) =>
       MediaQuery.of(context).size.width >= mediumScreenSize &&
