@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:web_dashboard/helpers/responsivenees.dart';
-import 'package:web_dashboard/widgets/large_screen.dart';
-import 'package:web_dashboard/widgets/medium_screen.dart';
-import 'package:web_dashboard/widgets/small_screen.dart';
-import 'package:web_dashboard/widgets/top_nav.dart';
+import 'helpers/responsivenees.dart';
+import 'widgets/large_screen.dart';
+import 'widgets/small_screen.dart';
+import 'widgets/top_nav.dart';
+
+import 'widgets/side_menu.dart';
 
 class SiteLayout extends StatelessWidget {
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey();
@@ -14,12 +15,13 @@ class SiteLayout extends StatelessWidget {
         //*define a parte de cima do site
         key: scaffoldKey,
         appBar: topNavigationBar(context, scaffoldKey),
-        drawer: Drawer(),
+        drawer: Drawer(
+          child: SideMenu(),
+        ),
         // ignore: prefer_const_constructors
         body: ResponsiveWidget(
           largeScreen: const LargeScreen(),
           smallScreen: const SmallScreen(),
-          mediumScreen: const MediumScreen(),
         ));
   }
 }
