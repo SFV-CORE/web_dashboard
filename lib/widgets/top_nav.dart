@@ -11,7 +11,7 @@ AppBar topNavigationBar(BuildContext context, GlobalKey<ScaffoldState> key) =>
               children: [
                 Container(
                     //*Define a posição do icon
-                    padding: EdgeInsets.only(left: 14),
+                    padding: const EdgeInsets.only(left: 14),
                     //*Define qual imagem usar
                     child: Image.asset(
                       "assets/icons/logo.png",
@@ -21,7 +21,7 @@ AppBar topNavigationBar(BuildContext context, GlobalKey<ScaffoldState> key) =>
             )
           //*Tela pequena
           : IconButton(
-              icon: Icon(Icons.menu),
+              icon: const Icon(Icons.menu),
               onPressed: () {
                 key.currentState?.openDrawer();
               },
@@ -57,7 +57,7 @@ AppBar topNavigationBar(BuildContext context, GlobalKey<ScaffoldState> key) =>
                 child: Container(
                   width: 12,
                   height: 12,
-                  padding: EdgeInsets.all(4),
+                  padding: const EdgeInsets.all(4),
                   decoration: BoxDecoration(
                     color: active,
                     borderRadius: BorderRadius.circular(30),
@@ -73,7 +73,7 @@ AppBar topNavigationBar(BuildContext context, GlobalKey<ScaffoldState> key) =>
             color: lightGrey,
           ),
 
-          SizedBox(
+          const SizedBox(
             width: 24,
           ),
 
@@ -82,7 +82,7 @@ AppBar topNavigationBar(BuildContext context, GlobalKey<ScaffoldState> key) =>
             color: lightGrey,
           ),
 
-          SizedBox(
+          const SizedBox(
             width: 16,
           ),
 
@@ -92,8 +92,8 @@ AppBar topNavigationBar(BuildContext context, GlobalKey<ScaffoldState> key) =>
               borderRadius: BorderRadius.circular(30),
             ),
             child: Container(
-                padding: EdgeInsets.all(2),
-                margin: EdgeInsets.all(2),
+                padding: const EdgeInsets.all(2),
+                margin: const EdgeInsets.all(2),
                 child: CircleAvatar(
                     backgroundColor: light,
                     child: Icon(
@@ -104,5 +104,5 @@ AppBar topNavigationBar(BuildContext context, GlobalKey<ScaffoldState> key) =>
         ],
       ),
       iconTheme: IconThemeData(color: dark),
-      backgroundColor: Colors.transparent,
+      backgroundColor: light,
     );
