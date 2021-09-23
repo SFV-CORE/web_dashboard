@@ -2,21 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:web_dashboard/constants/controllers.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:web_dashboard/constants/style.dart';
-import 'package:web_dashboard/widgets/custom_text.dart';
+import 'custom_text.dart';
 
 class VerticalMenuItem extends StatelessWidget {
   final String itemName;
   final Function onTap;
-  const VerticalMenuItem({
-    Key? key,
-    required this.itemName,
-    required this.onTap,
-  }) : super(key: key);
+  const VerticalMenuItem({Key key, this.itemName, this.onTap})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: onTap(),
+      onTap: onTap,
       onHover: (value) {
         value
             ? menuController.onHover(itemName)
@@ -38,15 +35,15 @@ class VerticalMenuItem extends StatelessWidget {
                   color: dark,
                 ),
                 maintainSize: true,
-                maintainAnimation: true,
                 maintainState: true,
+                maintainAnimation: true,
               ),
               Expanded(
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Padding(
-                      padding: const EdgeInsets.all(16),
+                      padding: EdgeInsets.all(16),
                       child: menuController.returnIconFor(itemName),
                     ),
                     if (!menuController.isActive(itemName))
