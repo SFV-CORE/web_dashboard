@@ -1,0 +1,25 @@
+import 'package:flutter/material.dart';
+import 'package:web_dashboard/pages/clients/clients.dart';
+import 'package:web_dashboard/pages/drivers/drivers.dart';
+import 'package:web_dashboard/pages/overview/overview.dart';
+import 'package:web_dashboard/routing/routes.dart';
+
+Route<dynamic> generateRoute(RouteSettings settings) {
+  switch (settings.name) {
+    case OverViewPageRoute:
+      return _getPageRoute(OverViewPage());
+
+    case DriverPageRoute:
+      return _getPageRoute(DriversPage());
+
+    case ClientsPageRoute:
+      return _getPageRoute(ClientsPage());
+
+    default:
+      return _getPageRoute(OverViewPage());
+  }
+}
+
+PageRoute _getPageRoute(Widget child) {
+  return MaterialPageRoute(builder: (context) => child);
+}
