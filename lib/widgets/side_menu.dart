@@ -1,3 +1,5 @@
+// ignore_for_file: use_key_in_widget_constructors
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:web_dashboard/constants/controllers.dart';
@@ -20,14 +22,14 @@ class SideMenu extends StatelessWidget {
             Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                SizedBox(
+                const SizedBox(
                   height: 40,
                 ),
                 Row(
                   children: [
                     SizedBox(width: _width / 48),
                     Padding(
-                      padding: EdgeInsets.only(right: 12),
+                      padding: const EdgeInsets.only(right: 12),
                       child: Image.asset("assets/icons/logo.png"),
                     ),
                     Flexible(
@@ -61,8 +63,9 @@ class SideMenu extends StatelessWidget {
 
                         if (!menuController.isActive(itemName)) {
                           menuController.changeActiveitemTo(itemName);
-                          if (ResponsiveWidget.isSmallScreen(context))
+                          if (ResponsiveWidget.isSmallScreen(context)) {
                             Get.back();
+                          }
                           navigationController.navigateTo(itemName);
                         }
                       },

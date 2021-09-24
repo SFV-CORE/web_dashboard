@@ -6,7 +6,7 @@ class AuthenticationPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return const Center(
         child: CustomText(
       text: "Log Of",
     ));

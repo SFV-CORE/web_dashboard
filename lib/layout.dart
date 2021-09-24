@@ -1,3 +1,5 @@
+// ignore_for_file: use_key_in_widget_constructors
+
 import 'package:flutter/material.dart';
 import 'helpers/responsivenees.dart';
 import 'widgets/large_screen.dart';
