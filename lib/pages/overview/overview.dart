@@ -11,6 +11,8 @@ import 'package:web_dashboard/pages/overview/widget/revenue_section_large.dart';
 import 'package:web_dashboard/pages/overview/widget/revenue_section_small.dart';
 import 'package:web_dashboard/widgets/custom_text.dart';
 
+import 'widget/avaliable_drivers.dart';
+
 class OverViewPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -21,11 +23,14 @@ class OverViewPage extends StatelessWidget {
             children: [
               Container(
                 margin: EdgeInsets.only(
-                    top: ResponsiveWidget.isSmallScreen(context) ? 56 : 6),
-                child: CustomText(
-                  text: menuController.activeItem.value,
-                  size: 24,
-                  weight: FontWeight.bold,
+                    top: ResponsiveWidget.isSmallScreen(context) ? 56 : 26),
+                child: Align(
+                  alignment: Alignment.topLeft,
+                  child: CustomText(
+                    text: menuController.activeItem.value,
+                    size: 24,
+                    weight: FontWeight.bold,
+                  ),
                 ),
               ),
             ],
@@ -33,6 +38,7 @@ class OverViewPage extends StatelessWidget {
         ),
         Expanded(
           child: ListView(children: [
+            //*Cards
             if (ResponsiveWidget.isLargeScreen(context) ||
                 ResponsiveWidget.isMediumScreen(context))
               if (ResponsiveWidget.isCustomSize(context))
@@ -41,10 +47,13 @@ class OverViewPage extends StatelessWidget {
                 const OverViewCardsLargeScreen()
             else
               OverviewCardsSmallScreen(),
+            // *Grafico
             if (!ResponsiveWidget.isSmallScreen(context))
               const RevenueSectionLarge()
             else
               const RevenueSectionSmall(),
+            //*Tabela
+            AvaliableDrivers(),
           ]),
         ),
       ],
