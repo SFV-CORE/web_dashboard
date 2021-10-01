@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'package:web_dashboard/constants/controllers.dart';
 import 'package:web_dashboard/helpers/responsivenees.dart';
+import 'package:web_dashboard/pages/clients/widgets/clients_table.dart';
 import 'package:web_dashboard/widgets/custom_text.dart';
 
 class ClientsPage extends StatelessWidget {
@@ -24,6 +25,11 @@ class ClientsPage extends StatelessWidget {
                 ),
               ),
             ],
+          ),
+        ),
+        Expanded(
+          child: ListView(
+            children: [ClientsTable()],
           ),
         ),
       ],
