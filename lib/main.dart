@@ -1,7 +1,10 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:web_dashboard/constants/style.dart';
+import 'package:web_dashboard/pages/authentication/authentication.dart';
 import 'controllers/navigation_controller.dart';
 import 'layout.dart';
 import 'controllers/menu_controller.dart';
@@ -34,7 +37,7 @@ class MyApp extends StatelessWidget {
           }),
           primaryColor: Colors.blue),
       //*define a pagina inicial
-      home: SiteLayout(),
+      home: AuthenticationPage(),
     );
   }
 }

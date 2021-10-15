@@ -1,8 +1,12 @@
+// ignore_for_file: use_key_in_widget_constructors
+
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'package:web_dashboard/constants/controllers.dart';
 import 'package:web_dashboard/helpers/responsivenees.dart';
 import 'package:web_dashboard/widgets/custom_text.dart';
+
+import 'widgets/clients_table.dart';
 
 class ClientsPage extends StatelessWidget {
   @override
@@ -24,6 +28,10 @@ class ClientsPage extends StatelessWidget {
             ],
           ),
         ),
+        Expanded(
+            child: ListView(
+          children: [ClientsTable()],
+        )),
       ],
     );
   }

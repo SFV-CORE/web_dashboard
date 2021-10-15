@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:web_dashboard/constants/style.dart';
 
@@ -55,7 +57,7 @@ class InfoCard extends StatelessWidget {
                             fontSize: 16,
                             color: isActive ? active : lightGrey)),
                     TextSpan(
-                        text: "$value",
+                        text: value,
                         style: TextStyle(
                             fontSize: 40, color: isActive ? active : dark)),
                   ])),

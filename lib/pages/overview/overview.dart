@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors
+
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'package:web_dashboard/constants/controllers.dart';
@@ -6,6 +8,10 @@ import 'package:web_dashboard/pages/overview/widget/overview_cards_large.dart';
 import 'package:web_dashboard/pages/overview/widget/overview_cards_medium.dart';
 import 'package:web_dashboard/pages/overview/widget/overview_cards_small.dart';
 import 'package:web_dashboard/widgets/custom_text.dart';
+
+import 'widget/avaliable_drivers.dart';
+import 'widget/revenue_section_large.dart';
+import 'widget/revenue_section_small.dart';
 
 class OverViewPage extends StatelessWidget {
   @override
@@ -36,7 +42,12 @@ class OverViewPage extends StatelessWidget {
               else
                 OverViewCardsLargeScreen()
             else
-              OverviewCardsSmallScreen()
+              OverviewCardsSmallScreen(),
+            if (!ResponsiveWidget.isSmallScreen(context))
+              RevenueSectionLarge()
+            else
+              RevenueSectionSmall(),
+            AvailableDrivers()
           ]),
         ),
       ],
