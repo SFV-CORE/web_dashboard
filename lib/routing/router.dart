@@ -8,13 +8,10 @@ Route<dynamic> generateRoute(RouteSettings settings) {
   switch (settings.name) {
     case OverViewPageRoute:
       return _getPageRoute(OverViewPage());
-
-    case DriverPageRoute:
+    case DriversPageRoute:
       return _getPageRoute(DriversPage());
-
     case ClientsPageRoute:
       return _getPageRoute(ClientsPage());
-
     default:
       return _getPageRoute(OverViewPage());
   }

@@ -8,8 +8,6 @@ import 'bar_chart.dart';
 import 'revenue_info.dart';
 
 class RevenueSectionLarge extends StatelessWidget {
-  const RevenueSectionLarge({Key key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Container(

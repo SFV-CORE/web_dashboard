@@ -1,43 +1,47 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:web_dashboard/constants/style.dart';
+import 'package:web_dashboard/controllers/menu_controller.dart';
+import 'package:web_dashboard/controllers/navigation_controller.dart';
+import 'package:web_dashboard/layout.dart';
+import 'package:web_dashboard/pages/404/error_page.dart';
+import 'package:web_dashboard/routing/routes.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:web_dashboard/constants/style.dart';
-import 'package:web_dashboard/pages/authentication/authentication.dart';
-import 'controllers/navigation_controller.dart';
-import 'layout.dart';
-import 'controllers/menu_controller.dart';
+import 'pages/authentication/authentication.dart';
 
 void main() {
   Get.put(MenuController());
   Get.put(NavigationController());
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      initialRoute: AuthenticationPageRoute,
+      unknownRoute: GetPage(
+          name: "/not-found",
+          page: () => PageNotFound(),
+          transition: Transition.fadeIn),
+      getPages: [
+        GetPage(name: RootRoute, page: () => SiteLayout()),
+        GetPage(
+            name: AuthenticationPageRoute, page: () => AuthenticationPage()),
+      ],
       debugShowCheckedModeBanner: false,
-      title: "Dash", //*Titulo da pagina
+      title: "Dash",
       theme: ThemeData(
           scaffoldBackgroundColor: light,
-
-          //*Define a cor de todo o texto como preto
           textTheme: GoogleFonts.mulishTextTheme(Theme.of(context).textTheme)
               .apply(bodyColor: Colors.black),
-          //*
-
-          pageTransitionsTheme: const PageTransitionsTheme(builders: {
+          pageTransitionsTheme: PageTransitionsTheme(builders: {
             TargetPlatform.iOS: FadeUpwardsPageTransitionsBuilder(),
             TargetPlatform.android: FadeUpwardsPageTransitionsBuilder()
           }),
           primaryColor: Colors.blue),
-      //*define a pagina inicial
-      home: AuthenticationPage(),
     );
   }
 }

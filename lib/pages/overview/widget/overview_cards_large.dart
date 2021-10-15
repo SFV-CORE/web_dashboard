@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:web_dashboard/pages/overview/widget/info_cards.dart';
 
 class OverViewCardsLargeScreen extends StatelessWidget {
-  const OverViewCardsLargeScreen({Key key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     double _width = MediaQuery.of(context).size.width;

@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:web_dashboard/constants/style.dart';
 import 'package:web_dashboard/layout.dart';
+import 'package:web_dashboard/routing/routes.dart';
 import 'package:web_dashboard/widgets/custom_text.dart';
 
 class AuthenticationPage extends StatelessWidget {
@@ -91,8 +92,7 @@ class AuthenticationPage extends StatelessWidget {
               ),
               InkWell(
                 onTap: () {
-                  //Get.offAllNamed(rootRoute);
-                  Get.offAll(() => SiteLayout());
+                  Get.offAllNamed(RootRoute);
                 },
                 child: Container(
                   decoration: BoxDecoration(
